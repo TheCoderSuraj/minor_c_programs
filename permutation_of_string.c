@@ -13,7 +13,10 @@ int main(){
     // allocating 1024 bytes to value variable
     value = (char *) malloc(sizeof(char) * 1024);
     printf("Enter any thing to permute: ");
-    scanf("%s",value);
+    // will get input until user press enter 
+    // or string length is equal to 1023 
+    // 1 byte for '\0' so 1023 + 1 = 1024
+    scanf("%1023[^'\n']",value);
 
     // reallocating only required memory to value variable
     value = (char *) realloc(value ,sizeof(char) * strlen(value));
@@ -23,6 +26,8 @@ int main(){
 
     // otherwise shows % at the end of program in zsh terminal (not required)
     printf("\n");
+    free(value);
+    value = NULL;
     return 0;
 }
 
