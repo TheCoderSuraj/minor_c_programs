@@ -15,7 +15,7 @@ int main(){
 
         printf("root1 is %.2f and root2 is %.2f",root1, root2);
     }else if(disc == 0){
-        root1 = root2 = (-b + disc)/ (2 * a);
+        root1 = root2 = -b / (2 * a);
         printf("root1 = root2 = %.2f",root1);
     }else{
         real = -b / (2 * a);
